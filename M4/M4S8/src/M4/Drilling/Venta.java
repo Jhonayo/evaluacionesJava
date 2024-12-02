@@ -8,7 +8,6 @@ public class Venta {
   private List<Productos> producto;
   private double ganacia;
 
-
   public Venta(Vendedor vendedor, List<Productos> producto, double ganacia) {
     this.vendedor = vendedor;
     this.producto = producto;
@@ -23,23 +22,22 @@ public class Venta {
     return ganacia;
   }
 
-public double calcularTotal(){
+  public double calcularTotal() {
     double total = 0;
     for (Productos productos : producto) {
-     total +=productos.getPrecio(); 
+      total += productos.getPrecio();
     }
     return total;
   }
 
-  public void mostrarResumen(){
+  public void mostrarResumen() {
+    System.out.println("/////////////////////////////////");
     System.out.println("-. Vendedor: " + vendedor);
     System.out.println("Productos en la venta");
     for (Productos productos : producto) {
-     productos.mostrarDetalles(); 
+      productos.mostrarDetalles();
     }
-      System.out.println("Total de la compra: $:"+ calcularTotal());
-    }
+    System.out.println("Total de la compra: $:" + calcularTotal());
+    System.out.println("/////////////////////////////////");
   }
-  
-
-
+}
